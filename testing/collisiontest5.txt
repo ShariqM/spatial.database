@@ -1,0 +1,6 @@
+rad 1
+bounds 0 0 10 10
+add 1 2 8 1 -1
+add 2 6 4 -1 1
+simulate 2
+cl 10

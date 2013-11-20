@@ -1,0 +1,84 @@
+                  The Track Particle Tracking System
+                      Users' Guide and Reference
+
+                           Shariq Mobin
+                           
+The Track Particle Tracking System provides an interface for simulating
+billiard moves on a table. They have positions and velocities which are
+limited by the boundaries of the table and their equal radius. Requests
+may be made for balls that are within some distance of eachother or 
+some point, as well as the possibility of simulating time.
+
+Input is free format and consists of continuous commands. Commands
+can be ended by starting a new line or simply entering a semicolon.
+
+	> <command> <args>
+	> <command> <args>; <command> <args>
+	> <command> <args>
+                           
+The command is then executed with the specified arguments.
+
+The possible input commands are as follows:
+  
+  # A comment (one line per #)
+  
+  bounds xLow yLow xHigh yHigh The bounds of the four corners of the table
+  		initially 0 0 0 0.
+  		
+  add ID x y vx vy Add a new ball with a specified ID and position x y
+  		as well as velocity vx and vy in the x and y direction 
+  		respectively.
+  
+  rad r The radius of all balls, can only be increased.
+  
+  load filename Read the file as if it all the commands had just
+  		been entered.
+  
+  write filename Write a script that would reproduce the state of
+  		the table into filename.
+  
+  near x y d Print all balls and their variables whose center is
+  		within distance d of x, y.
+  
+  near x * d Print all balls and their variables whose center is
+  		within distance d of x along the x axis.
+
+  near * y d Print all balls and their variables whose center is
+  		within distance d of y along the y axis.
+  
+  print Print all points in the quadTree
+  
+  simulate t Simulate time for t long. All balls will move to
+  		the new position calculated from the time and their
+  		velocity.
+  
+  quit End the program
+ 
+Command input is free-format; commands (other than comments) 
+may cross line boundaries, and multiple commands are allowed on a line.
+
+EXAMPLE: 
+
+In the following, input from the terminal is marked with a "> " prompt.
+
+    	Particle tracker, v4.0.
+		> rad 3
+		> bounds 0 0 256 256
+		> add 1 20 20 40 40
+		> add 13 200 200 -12 -4
+		> add 412 12 250 12 3
+		> add 3 30 30 13 -20
+		> near 25 25 10
+		1:(20.00,20.00,40.00,40.00) 3:(30.00,30.00,13.00,-20.00)
+		> cl 100
+		1:(20.00,20.00,40.00,40.00) 3:(30.00,30.00,13.00,-20.00)
+		> simulate 3.5
+		> cl 100
+		> near * 100 100
+		1:(40.57,141.0,4.340,34.31) 3:(194.9,26.96,48.66,14.31)
+		13:(158.0,186.0,-12.00,-4.000)
+		> quit
+
+  
+	
+

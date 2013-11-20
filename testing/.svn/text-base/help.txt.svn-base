@@ -1,0 +1,33 @@
+  # A comment (one line per #)
+  
+  bounds xLow yLow xHigh yHigh The bounds of the four corners of the table
+  		initially 0 0 0 0.
+  		
+  add ID x y vx vy Add a new ball with a specified ID and position x y
+  		as well as velocity vx and vy in the x and y direction 
+  		respectively.
+  
+  rad r The radius of all balls, can only be increased.
+  
+  load filename Read the file as if it all the commands had just
+  		been entered.
+  
+  write filename Write a script that would reproduce the state of
+  		the table into filename.
+  
+  near x y d Print all balls and their variables whose center is
+  		within distance d of x, y.
+  
+  near x * d Print all balls and their variables whose center is
+  		within distance d of x along the x axis.
+
+  near * y d Print all balls and their variables whose center is
+  		within distance d of y along the y axis.
+
+  print Print all points in the quadTree
+  
+  simulate t Simulate time for t long. All balls will move to
+  		the new position calculated from the time and their
+  		velocity.
+  
+  quit End the program

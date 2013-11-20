@@ -1,0 +1,7 @@
+rad 3
+bounds 0 0 256 256
+add 1 22 22 0 20
+add 2 22 68 0 -20
+simulate 2
+near 22 25 5
+near 25 68 5

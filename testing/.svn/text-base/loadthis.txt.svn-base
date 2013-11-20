@@ -1,0 +1,3 @@
+add 10 20 20 20 20
+add 12 40 40 40 40
+load testing/nextload.txt

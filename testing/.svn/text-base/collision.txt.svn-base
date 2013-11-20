@@ -1,0 +1,6 @@
+rad 3
+bounds 0 0 256 256
+add 5 23 25 -20 0
+print
+simulate 1.1
+print

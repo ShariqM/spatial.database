@@ -1,0 +1,52 @@
+              An Implementor's Guide to the Track System
+                        Shariq Mobin
+                        
+REPRESENTATION OF BILLIARD BALLS
+
+Internally, a ball is simply a point. The radius specified in the
+system specifies its size. Each ball has an unique id #, a x and
+y position, and a velocity component in the x and y direction.
+id is of type int, while the rest are of type double. No id can be
+negative, nor radius.
+
+The system keeps track of all balls, the boundaries of table that hold
+the balls, and the radius of eachball, as well as the quadtree that
+contains them.
+
+Internally, a Polynomial is a sequence of non-zero terms, stored as a
+List in canonical order.  An empty list represents the 0 polynomial.
+
+Only when simulating real time do any of balls varaibles change, however
+the radius may be shrunken and the boundaries may be expanded at any
+time.
+
+BASIC OPERATIONS ON BILLIARD BALLS
+
+Queries can be asked of the system about the location of balls and
+more specifically a balls location in relation to another. There
+are many commands that can achieve different effects as described
+in the User-Manual or using the 'help' command. Such queries include
+which objects are within distance D of eachother.
+
+The other major operation is simulate. Simulating time allows the 
+balls to move to new locations collide with walls or other balls.
+They are then rebounded in different directions as determined by
+the Physics package.
+
+PARSING
+
+There is no large parser class since the input is simple, and the
+only necessary parsing is to remove touching semicolons and 
+commeting symbols, '#'. This is done by a simple parse which removes
+the unwanted symbol.
+
+EFFICIENCY
+
+With so many points possible to be represented in a 2D space it
+seems necessary to use a less then simple data structure. In this
+case a Quad Tree is used so that queries about position of objects
+can be reduced to K*N instead of N**2. This is done by diving the 
+space which a point can be added into 4 quadrants recursively.
+The Points position in relation to the center of the boundary
+determins how it is stored and that same algorithim is used to
+find the node. 

@@ -1,0 +1,9 @@
+rad 1
+# delta = 1 * 8 = 8
+bounds 0 0 16 16
+add 1 1 1 -6 6
+add 2 1 3 3 3
+add 3 5 2 3 -3
+add 4 5 5 -3 -3
+simulate 1
+cl 10

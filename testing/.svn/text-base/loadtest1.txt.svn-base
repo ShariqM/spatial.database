@@ -1,0 +1,4 @@
+rad 3
+bounds 0 0 128 128
+load testing/loadthis.txt
+cl 30
